@@ -29,17 +29,17 @@ exports.handler = async (event) => {
     // ──────────── /start ────────────
     if (msg.text === '/start') {
       await tg(chatId,
-        `👋 Sálem, *${firstName}*!\n\n` +
+        `👋 Assalawma áleykum, *${firstName}*!\n\n` +
         `🏛️ *Ashıq Byudjet* portalına xosh keldiñiz!\n\n` +
         `Bul bot arqalı siz:\n` +
         `📱 Telefon nomerińizdi dizimge ala alasız\n` +
-        `🔐 Tastıyıqlаw kodın qabıl ete alasız\n` +
+        `🔐 Tastıyıqlaw kodın qabıl ete alasız\n` +
         `🗳️ Jobalarǵa dawıs bere alasız\n\n` +
         `▶️ Dizimge alıw ushın tómendegi túymeni basıp,\n` +
-        `telefon nomerińizdi ulasıń:`,
+        `telefon nomerińizdi jiberiń:`,
         {
           reply_markup: JSON.stringify({
-            keyboard: [[{ text: '📱 Telefon noimerimi ulasıw', request_contact: true }]],
+            keyboard: [[{ text: '📱 Telefon nomerimdi jiberiw', request_contact: true }]],
             resize_keyboard: true,
             one_time_keyboard: true
           })
@@ -82,16 +82,16 @@ exports.handler = async (event) => {
         } catch {}
 
         await tg(chatId,
-          `👤 *Sizińizdińiź jaǵdayı:*\n\n` +
+          `👤 *Siziń jaǵdayıńız:*\n\n` +
           `📱 Telefon: +998${userPhone}\n` +
-          `✅ Dizimge alınǵan\n` +
+          `✅ Siz dizimge alınǵansız\n` +
           `🗳️ Berılgen dawıslar sanı: *${voteCount}*\n\n` +
           `Portal: ashıqbyudjet.netlify.app`
         );
       } else {
         await tg(chatId,
-          `❌ Siz háliye dizimge alınbaǵansız.\n\n` +
-          `Dizimge alıw ushın /start nı basıń!`
+          `❌ Siz ele dizimge alınbaǵansız.\n\n` +
+          `Dizimge alıw ushın /start túymesin basıń!`
         );
       }
       return { statusCode: 200, body: 'ok' };
@@ -127,10 +127,10 @@ exports.handler = async (event) => {
       await tg(chatId,
         `✅ *Sátti dizimge alındıńız!*\n\n` +
         `📱 Telefon: +998${phone}\n` +
-        `👤 Atı-jónı: ${fullName}\n\n` +
+        `👤 Atı-jónińiz: ${fullName}\n\n` +
         `Endi *Ashıq Byudjet* saytına kirip,\n` +
         `telefon nomerińizdi kiritiń.\n\n` +
-        `Tastıyıqlаw kodi sonnan keledi! 🔐`,
+        `Tastıyıqlaw kodı sonnan keledi! 🔐`,
         { reply_markup: JSON.stringify({ remove_keyboard: true }) }
       );
 

@@ -175,7 +175,7 @@ function openVoteModal(p) {
 document.getElementById('castVoteBtn').addEventListener('click', async () => {
   if (!selectedProject || userVotes.has(selectedProject.id) || !currentUser) return;
   const btn = document.getElementById('castVoteBtn');
-  btn.textContent = '⏳ Jiberilmoqda...'; btn.disabled = true;
+  btn.textContent = '⏳ Jiberilmekte...'; btn.disabled = true;
   try {
     const res = await apiPost(API.vote, { phone: currentUser.phone, projectId: selectedProject.id });
     if (res.success) {
@@ -261,7 +261,7 @@ document.getElementById('sendCodeBtn').addEventListener('click', async () => {
     return;
   }
   const btn = document.getElementById('sendCodeBtn');
-  btn.textContent = '⏳ Jiberilmoqda...'; btn.disabled = true;
+  btn.textContent = '⏳ Jiberilmekte...'; btn.disabled = true;
   try {
     const res = await apiPost(API.sendOtp, { phone });
     if (res.success) {
@@ -312,7 +312,7 @@ document.getElementById('verifyCodeBtn').addEventListener('click', async () => {
   const code = [...document.querySelectorAll('.otp-cell')].map(c => c.value).join('');
   if (code.length < 4) { showToast('⚠️ 4 xanalı kodtı kiritiń!'); return; }
   const btn = document.getElementById('verifyCodeBtn');
-  btn.textContent = '⏳ Tekserilmoqda...'; btn.disabled = true;
+  btn.textContent = '⏳ Tekserilmekte...'; btn.disabled = true;
   const phone = phoneInput.value.replace(/\D/g,'');
   try {
     let success = false, userName = '';

@@ -46,11 +46,11 @@ exports.handler = async (event) => {
 
     if (!result.valid) {
       const msgs = {
-        expired: 'Kod múddeti ótti. Qayta soraú jasáóız.',
-        wrong: 'Notoǵrı kod. Qayta urınıb kóriñ.',
-        phone: 'Telefon nomerı sáykes kelmeyt.',
-        tampered: 'Kod buzılǵan. Qayta soraú jasáóız.',
-        default: 'Notoǵrı kod.'
+        expired: 'Kod múddeti ótti. Jańadan sorap kóriń.',
+        wrong: 'Qate kod. Qayta urınıp kóriń.',
+        phone: 'Telefon nomeri tuwrı kelmedi.',
+        tampered: 'Kod qátelik penen kelgen. Jańadan sorap kóriń.',
+        default: 'Qate kod.'
       };
       return { statusCode: 400, headers, body: JSON.stringify({ success: false, message: msgs[result.reason] || msgs.default }) };
     }
@@ -67,7 +67,7 @@ exports.handler = async (event) => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           chat_id: userInfo.chatId,
-          text: `✅ *Sátti kirdińiz!*\n\n🕐 ${new Date().toLocaleString('uz-UZ')}\n\nEndi jobalarǵa dawıs bere alasız! 🗳️`,
+          text: `✅ *Sátti kirdińiz!*\n\n🕐 ${new Date().toLocaleString('kaa-UZ')}\n\nEndi jobalarǵa dawıs bere alasız! 🗳️`,
           parse_mode: 'Markdown'
         })
       }).catch(() => {});

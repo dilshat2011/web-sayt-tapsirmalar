@@ -33,11 +33,11 @@ exports.handler = async (event) => {
 
   try {
     const { phone } = JSON.parse(event.body || '{}');
-    if (!phone) return { statusCode: 400, headers, body: JSON.stringify({ success: false, message: 'Telefon nomeri kiritiilmegen' }) };
+    if (!phone) return { statusCode: 400, headers, body: JSON.stringify({ success: false, message: 'Telefon nomeri kiritilmegen' }) };
 
     const normalPhone = formatPhone(phone);
     if (normalPhone.length < 9) {
-      return { statusCode: 400, headers, body: JSON.stringify({ success: false, message: 'Telefon nomeri notoǵrı' }) };
+      return { statusCode: 400, headers, body: JSON.stringify({ success: false, message: 'Telefon nomeri qate' }) };
     }
 
     // Telefon → ChatId topish
@@ -53,7 +53,7 @@ exports.handler = async (event) => {
         statusCode: 404, headers,
         body: JSON.stringify({
           success: false,
-          message: 'Bul telefon Telegram botda dizimge alınbaǵan. Aldın botdı іске qosıp, nomerińizdi ulasıń.',
+          message: 'Bul telefon Telegram botta dizimge alınbaǵan. Aldın bottı iske qosıp, nomerińizdi jiberiń.',
           botLink
         })
       };
@@ -69,7 +69,7 @@ exports.handler = async (event) => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         chat_id: userInfo.chatId,
-        text: `🔐 *Tastıyıqlаw kodi*\n\nSizińizdiń kodıńız: *${otp}*\n\n⏰ Kod 2 minutta ámelde.\n⚠️ Bul kodtı heshkimge bermeñ!\n\n_Eger siz bul soraw jibermegen bolsańız, názerge almaóız._`,
+        text: `🔐 *Tastıyıqlaw kodı*\n\nSiziń kodıńız: *${otp}*\n\n⏰ Kod 2 minutta ámelde boladı.\n⚠️ Bul kodtı heshkimge bermeń!\n\n_Eger siz bul sorawdı jibermegen bolsańız, oǵan itibar bermeń._`,
         parse_mode: 'Markdown'
       })
     });
