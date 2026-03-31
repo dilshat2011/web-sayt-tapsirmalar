@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="kaa">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ashıq Byudjet | Ishtirak Etiwshi Byudjet</title>
+  <meta name="description" content="Ishtirak etiwshi byudjet portalı — ózińizdiń aymaqıńızdıń rawajlanıwına úles qosıń, jobalar usınıń hám dawıs beriń." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-icon">◈</span>
+        <span>ASHIQ BYUDJET</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero" class="nav-link active">Bas bet</a></li>
+        <li><a href="#about" class="nav-link">Jobalar</a></li>
+        <li><a href="#results" class="nav-link">Nátiyjeler</a></li>
+        <li><a href="tel:+998712030000" class="nav-link">Baylanıs</a></li>
+      </ul>
+      <button class="nav-cta" id="openLoginBtn">Kiriw</button>
+      <button class="hamburger" id="hamburger" aria-label="Menyu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+    <div class="container hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Ishtirak Etiwshi Byudjet 2025
+      </div>
+      <h1 class="hero-title">
+        Ózińizdiń keleshegińiz<br />
+        <span class="gradient-text">ushın dawıs beriń</span>
+      </h1>
+      <p class="hero-desc">
+        Ishtirak etiwshi byudjet portalı arqalı ózińizdiń aymaqıńızdıń rawajlanıwına úles qosıń.
+        Bul jerde siz ózińizdiń jobalarıńızdı usınıwıńız hám basqalar ushın dawıs beriwińiz múmkin.
+      </p>
+      <div class="hero-buttons">
+        <button class="btn btn-primary" id="heroLoginBtn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Dawıs beriw
+        </button>
+        <a href="#about" class="btn btn-outline">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          Jobalardy kóriw
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <div class="stat-number" data-target="1250">0</div>
+          <div class="stat-label">Qatnasıwshılar</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="47">0</div>
+          <div class="stat-label">Jobalar</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="14">0</div>
+          <div class="stat-label">Rayonlar</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-indicator">
+        <div class="scroll-dot"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOBALAR -->
+  <section class="section projects-section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Jobalar</div>
+        <h2 class="section-title">Ámeldegi jobalar</h2>
+        <p class="section-desc">Aymaqıńız ushın eń maqsetli jobalardy saylań hám olara dawıs beriń</p>
+      </div>
+
+      <div class="projects-filter">
+        <button class="filter-btn active" data-filter="all">Barlıǵı</button>
+        <button class="filter-btn" data-filter="infrastructure">Infrastruktura</button>
+        <button class="filter-btn" data-filter="education">Bilimlendiriw</button>
+        <button class="filter-btn" data-filter="health">Sálametliklendiriw</button>
+        <button class="filter-btn" data-filter="ecology">Ekologiya</button>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid"></div>
+    </div>
+  </section>
+
+  <!-- NÁTIYJELER -->
+  <section class="section results-section" id="results">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Nátiyjeler</div>
+        <h2 class="section-title">Dawıslar nátiyjeleri</h2>
+        <p class="section-desc">Naqtı waqıtta jańalanıp turatǵın dawıslasıw nátiyjeleri</p>
+      </div>
+
+      <div class="results-grid">
+        <div class="results-chart-card">
+          <h3>Jobalar boyınsha dawıslar</h3>
+          <div class="chart-bars" id="chartBars"></div>
+        </div>
+        <div class="results-stats-col">
+          <div class="result-stat-card purple">
+            <div class="rs-icon">🗳️</div>
+            <div class="rs-info">
+              <div class="rs-number">8,432</div>
+              <div class="rs-label">Jámi dawıslar</div>
+            </div>
+          </div>
+          <div class="result-stat-card green">
+            <div class="rs-icon">✅</div>
+            <div class="rs-info">
+              <div class="rs-number">47</div>
+              <div class="rs-label">Jobalar sanı</div>
+            </div>
+          </div>
+          <div class="result-stat-card blue">
+            <div class="rs-icon">📍</div>
+            <div class="rs-info">
+              <div class="rs-number">14</div>
+              <div class="rs-label">Aymaqlar</div>
+            </div>
+          </div>
+          <div class="result-stat-card orange">
+            <div class="rs-icon">🏆</div>
+            <div class="rs-info">
+              <div class="rs-number">5</div>
+              <div class="rs-label">Ámelge asırıldı</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="logo-icon">◈</span>
+            <span>ASHIQ BYUDJET</span>
+          </div>
+          <p>Ishtirak etiwshi byudjet portalı — puqaralar hám húkimet arasındaǵı kópir.</p>
+          <div class="footer-social">
+            <a href="https://t.me/kolyabot" target="_blank" class="social-btn telegram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+              Telegram Bot
+            </a>
+          </div>
+        </div>
+        <div class="footer-links-col">
+          <h4>Betler</h4>
+          <ul>
+            <li><a href="#hero">Bas bet</a></li>
+            <li><a href="#about">Jobalar</a></li>
+            <li><a href="#results">Nátiyjeler</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4>Baylanıs</h4>
+          <ul>
+            <li><a href="tel:+998712030000">+998 71 203 00 00</a></li>
+            <li><a href="https://t.me/kolyabot" target="_blank">Telegram bot</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Ashıq Byudjet. Barlıq huqıqlar qorǵalǵan.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- KIRIW MODALI -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="loginModal">
+      <button class="modal-close" id="modalClose" aria-label="Jabıw">✕</button>
+
+      <!-- 1-qadam: Telefon -->
+      <div class="modal-step active" id="step1">
+        <div class="modal-icon">📱</div>
+        <h2>Sistemage kiriw</h2>
+        <p>Dawıs beriw ushın telefon nomerińizdi kiritiń</p>
+        <div class="form-group">
+          <label for="phoneInput">Telefon nomeri</label>
+          <div class="phone-input-wrap">
+            <span class="phone-prefix">+998</span>
+            <input type="tel" id="phoneInput" placeholder="90 123 45 67" maxlength="12" autocomplete="tel" />
+          </div>
+        </div>
+        <div class="telegram-hint">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="#2AABEE"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          <span>Kod Telegramga keliwi ushın aldın botdı іske qosıń:</span>
+        </div>
+        <a href="https://t.me/kolyabot" target="_blank" class="btn btn-telegram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          Botdı іske qosıw
+        </a>
+        <p class="hint-text">Kod sizińizdiń Telegram akkauntıńızǵa jiberiledi.</p>
+        <button class="btn btn-primary full-width" id="sendCodeBtn">Kod jiberiw</button>
+      </div>
+
+      <!-- 2-qadam: OTP -->
+      <div class="modal-step" id="step2">
+        <div class="modal-icon">🔐</div>
+        <h2>Tastıyıqlаw kodi</h2>
+        <p>Kodtı Telegram botımızda kóre alasız: <a href="https://t.me/kolyabot" target="_blank" class="tg-link">@kolyabot</a></p>
+        <div class="otp-inputs" id="otpInputs">
+          <input type="text" class="otp-cell" maxlength="1" inputmode="numeric" id="otp0" />
+          <input type="text" class="otp-cell" maxlength="1" inputmode="numeric" id="otp1" />
+          <input type="text" class="otp-cell" maxlength="1" inputmode="numeric" id="otp2" />
+          <input type="text" class="otp-cell" maxlength="1" inputmode="numeric" id="otp3" />
+        </div>
+        <div class="timer-row">
+          <span>Kod kelmedıme?</span>
+          <span class="timer" id="timerDisplay">02:00</span>
+        </div>
+        <button class="btn btn-primary full-width" id="verifyCodeBtn">Tastıyıqlаw</button>
+        <button class="btn-back" id="backToPhone">← Telefonga qayıtıw</button>
+      </div>
+
+      <!-- 3-qadam: Muvaffaqiyat -->
+      <div class="modal-step" id="step3">
+        <div class="success-animation">
+          <div class="success-circle">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+        </div>
+        <h2>Sátti!</h2>
+        <p>Siz sistemage kirdińiz. Endi dawıs beriwińiz múmkin.</p>
+        <button class="btn btn-primary full-width" id="startVotingBtn">Dawıs beriwdi baslaw</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- DAWIS BERIW MODALI -->
+  <div class="modal-overlay" id="voteModalOverlay">
+    <div class="modal vote-modal" id="voteModal">
+      <button class="modal-close" id="voteModalClose">✕</button>
+      <div class="vote-modal-header">
+        <div class="vote-modal-icon" id="voteIcon">🏗️</div>
+        <h2 id="voteProjectName">Joba atı</h2>
+        <p id="voteProjectDesc">Joba sıpatlaması</p>
+      </div>
+      <div class="vote-progress-wrap">
+        <div class="vote-progress-labels">
+          <span id="voteCount">0 dawıs</span>
+          <span id="votePercent">0%</span>
+        </div>
+        <div class="vote-progress-bar">
+          <div class="vote-progress-fill" id="voteProgressFill" style="width:0%"></div>
+        </div>
+      </div>
+      <button class="btn btn-primary full-width vote-btn" id="castVoteBtn">
+        🗳️ Dawıs beriw
+      </button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
