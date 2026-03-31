@@ -56,7 +56,7 @@ exports.handler = async (event) => {
         `*/start* — Botdı іske qosıw\n` +
         `*/status* — Meniń jaǵdayım\n` +
         `*/yordam* — Járdem\n\n` +
-        `🌐 Portal: ashıqbyudjet.netlify.app\n` +
+        `🌐 Portal: websaythamtelegrambot.netlify.app\n` +
         `📞 Tel: +998 71 203 00 00`
       );
       return { statusCode: 200, body: 'ok' };
