@@ -2,6 +2,15 @@
 const { getStore } = require('@netlify/blobs');
 
 const TELEGRAM_API = `https://api.telegram.org/bot${process.env.BOT_TOKEN}`;
+const ADMIN_ID = process.env.ADMIN_ID || '524423309';
+
+async function tg(chatId, text, extra = {}) {
+  return fetch(`${TELEGRAM_API}/sendMessage`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ chat_id: chatId, text, parse_mode: 'Markdown', ...extra })
+  }).then(r => r.json()).catch(() => {});
+}
 
 const projects = [
   { id: 1, icon: '🏗️', category: 'Infrastruktura', name: "Kósheni rawajlandırıw", desc: "Shımbay rayonındaǵı tiykarǵı kóshelerdı zámanagóy órtewler menen tólewlew.", votes: 312, maxVotes: 500 },
@@ -56,15 +65,17 @@ exports.handler = async (event) => {
     let userInfo;
     try { userInfo = await phoneStore.get(normalPhone, { type: 'json' }); } catch {}
     if (userInfo?.chatId) {
-      fetch(`${TELEGRAM_API}/sendMessage`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          chat_id: userInfo.chatId,
-          text: `🗳️ *Dawısıńız qabıl etildi!*\n\n✅ Joba: *${project.name}*\n\nDawısıńız ushın rahmet! 🙏`,
-          parse_mode: 'Markdown'
-        })
-      }).catch(() => {});
+      tg(userInfo.chatId, `🗳️ *Dawısıńız qabıl etildi!*\n\n✅ Joba: *${project.name}*\n\nDawısıńız ushın rahmet! 🙏`);
+    }
+
+    // Admin xabardorligi
+    if (ADMIN_ID) {
+      tg(ADMIN_ID,
+        `🗳️ *Jańa dawıs!*\n` +
+        `👤 ${userInfo?.name || 'Belgısız'}\n` +
+        `📱 +998${normalPhone}\n` +
+        `🏗️ Joba: ${project.name}`
+      ).catch(() => {});
     }
 
     return { statusCode: 200, headers, body: JSON.stringify({ success: true, message: 'Dawısıńız qabıl etildi!', project }) };

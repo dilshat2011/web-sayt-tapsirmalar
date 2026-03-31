@@ -3,6 +3,7 @@
 const { getStore } = require('@netlify/blobs');
 
 const BOT_API = `https://api.telegram.org/bot${process.env.BOT_TOKEN}`;
+const ADMIN_ID = process.env.ADMIN_ID || '524423309';
 
 async function tg(chatId, text, extra = {}) {
   return fetch(`${BOT_API}/sendMessage`, {
@@ -135,8 +136,8 @@ exports.handler = async (event) => {
       );
 
       // Admin xabardorligi
-      if (process.env.ADMIN_ID) {
-        tg(process.env.ADMIN_ID,
+      if (ADMIN_ID) {
+        tg(ADMIN_ID,
           `🆕 Jańa paydalanıwshı:\n` +
           `👤 ${fullName}\n` +
           `📱 +998${phone}\n` +
